@@ -25,6 +25,7 @@ public class RotationLeft {
                 cardinalPoint = CardinalPoint.N;
                 break;
         }
+
         return cardinalPoint;
     }
 

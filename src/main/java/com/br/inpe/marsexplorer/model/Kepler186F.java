@@ -1,7 +1,6 @@
 package com.br.inpe.marsexplorer.model;
 
 import com.br.inpe.marsexplorer.enumerator.CardinalPoint;
-import com.br.inpe.marsexplorer.enumerator.Exploration;
 
 /**
  *

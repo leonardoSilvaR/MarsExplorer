@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ExplorerService implements Serializable {
-
+    
     public Kepler186F getExploration(String command) {
         Kepler186F kp = new Kepler186F();
         if (RequestValidator.validator(command)) {
@@ -25,20 +25,12 @@ public class ExplorerService implements Serializable {
                 switch (c) {
                     case 'R':
                         kp.changeCardinal(RotationRight.rotation(kp.getCardinal()));
-//                    System.out.println("kp CARD> " + kp.getCardinal());
-//                    System.out.println("Entrei Right");
-//                    System.out.println("KP>> " + );
                         break;
                     case 'L':
                         kp.changeCardinal(RotationLeft.rotation(kp.getCardinal()));
-//                    System.out.println("Entrei Left");
-//                    System.out.println("KP>> " + ));
                         break;
                     case 'M':
                         kp.move(1);
-//                    System.out.println("Entrei Move");
-//                    System.out.println("KP>> " + );
-
                         break;
                 }
             }

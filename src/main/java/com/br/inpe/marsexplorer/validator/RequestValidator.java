@@ -7,9 +7,13 @@ package com.br.inpe.marsexplorer.validator;
  * @version 1.0
  */
 public class RequestValidator {
-    
-    public static Boolean validator(String req){
-        return (req !=null && !req.isEmpty() && (req.contains("M")||req.contains("R") ||req.contains("L")));
+
+    private static final String R = "R";
+    private static final String L = "L";
+    private static final String M = "M";
+
+    public static Boolean validator(String req) {
+        return (req != null && !req.isEmpty() && (req.contains(M) || req.contains(R) || req.contains(L)));
     }
 
 }
