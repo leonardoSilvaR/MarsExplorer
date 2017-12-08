@@ -25,7 +25,7 @@ Não deve guardar estado do robô para consulta posterior;
 mvn clean install spring-boot:run
 ```
 
-## Exemplo de Teste
+## Exemplos de Teste
 ```
 Entrada: curl -s --request POST http://localhost:8080/rest/mars/MMRMMRMM
 Saída esperada: (2, 0, S)
