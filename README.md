@@ -19,6 +19,9 @@ Deverá ser possível enviar um comando para o Robô que me retorne a posição 
 O Robô não pode se movimentar para fora da área especificada;
 Não deve guardar estado do robô para consulta posterior;
 
+# Rodando a app
+mvn clean install spring-boot:run
+
 # Teste Case Default
 
 - Movimento com rotações para direita
