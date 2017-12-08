@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class Kepler186FServiceImpl implements ExplorerService<Kepler186F> {
 
+    private Kepler186F kp;
+
     /**
      * Return exploration journey of Kepler robot
      *
@@ -24,28 +26,27 @@ public class Kepler186FServiceImpl implements ExplorerService<Kepler186F> {
      * @return new Kepler's location
      */
     @Override
-    public Kepler186F getExploration(String command) {
-        Kepler186F kp = new Kepler186F();
+    public Boolean getExploration(String command) {
+        kp = new Kepler186F();
         kp.initialLocation();
-        if (Validator.requestValidator(command)) {
-            for (Character c : command.toCharArray()) {
-                switch (c) {
-                    case 'R':
-                        kp.setCardinal(RotationRight.rotation(kp.getCardinal()));
-                        break;
-                    case 'L':
-                        kp.setCardinal(RotationLeft.rotation(kp.getCardinal()));
-                        break;
-                    case 'M':
-                        kp.move(1);
-                        break;
-                }
-            }
-            if (Validator.groundValidator(kp)) {
-                return kp;
+        for (Character c : command.toCharArray()) {
+            switch (c) {
+                case 'R':
+                    kp.setCardinal(RotationRight.rotation(kp.getCardinal()));
+                    break;
+                case 'L':
+                    kp.setCardinal(RotationLeft.rotation(kp.getCardinal()));
+                    break;
+                case 'M':
+                    kp.move();
+                    break;
             }
         }
-        return null;
+        return Validator.groundValidator(kp) && Validator.requestValidator(command);
+    }
+
+    public Kepler186F getKp() {
+        return kp;
     }
 
 }

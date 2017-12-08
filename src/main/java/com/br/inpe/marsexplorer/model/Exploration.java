@@ -12,6 +12,6 @@ public interface Exploration<T> extends Serializable {
 
     T initialLocation();
 
-    T move(int move);
+    T move();
 
 }

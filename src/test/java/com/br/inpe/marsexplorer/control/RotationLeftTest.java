@@ -1,36 +1,49 @@
 package com.br.inpe.marsexplorer.control;
 
-import com.br.inpe.marsexplorer.control.RotationLeft;
 import com.br.inpe.marsexplorer.enumerator.CardinalPoint;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com.br>
- * @since 07/12/2017
- * @version 1.0
+ * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com>
  */
 public class RotationLeftTest {
 
     @Test
-    public void rotationNorthToWest() {
-        assertEquals(CardinalPoint.W, RotationLeft.rotation(CardinalPoint.N));
+    public void testRotationNtoW() {
+        CardinalPoint cardinalPoint = CardinalPoint.N;
+        CardinalPoint expResult = CardinalPoint.W;
+        CardinalPoint result = RotationLeft.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void rotationWestToSouth() {
-        assertEquals(CardinalPoint.S, RotationLeft.rotation(CardinalPoint.W));
+    public void testRotationWtoS() {
+        CardinalPoint cardinalPoint = CardinalPoint.W;
+        CardinalPoint expResult = CardinalPoint.S;
+        CardinalPoint result = RotationLeft.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void rotationSouthToEast() {
-        assertEquals(CardinalPoint.E, RotationLeft.rotation(CardinalPoint.S));
+    public void testRotationStoE() {
+        CardinalPoint cardinalPoint = CardinalPoint.S;
+        CardinalPoint expResult = CardinalPoint.E;
+        CardinalPoint result = RotationLeft.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void rotationEastToNorth() {
-        assertEquals(CardinalPoint.N, RotationLeft.rotation(CardinalPoint.E));
+    public void testRotationEtoN() {
+        CardinalPoint cardinalPoint = CardinalPoint.E;
+        CardinalPoint expResult = CardinalPoint.N;
+        CardinalPoint result = RotationLeft.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
 
 }

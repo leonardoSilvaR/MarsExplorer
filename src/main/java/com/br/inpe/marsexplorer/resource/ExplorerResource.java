@@ -36,8 +36,8 @@ public class ExplorerResource {
      */
     @RequestMapping(value = "/explore/{command}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity finalDestiny(@PathVariable("command") String command) {
-        if (service.getExploration(command) != null) {
-            return new ResponseEntity(service.getExploration(command), HttpStatus.OK);
+        if (service.getExploration(command)) {
+            return new ResponseEntity(service.getKp(), HttpStatus.OK);
         }
         return new ResponseEntity(HttpStatus.BAD_REQUEST.getReasonPhrase(), HttpStatus.BAD_REQUEST);
     }

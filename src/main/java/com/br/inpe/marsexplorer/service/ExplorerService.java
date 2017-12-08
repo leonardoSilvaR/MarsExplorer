@@ -9,5 +9,5 @@ import java.io.Serializable;
  */
 public interface ExplorerService<T> extends Serializable {
 
-    T getExploration(String command);
+    Boolean getExploration(String command);
 }

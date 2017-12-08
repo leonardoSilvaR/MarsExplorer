@@ -1,36 +1,44 @@
 package com.br.inpe.marsexplorer.control;
 
-import com.br.inpe.marsexplorer.control.RotationRight;
 import com.br.inpe.marsexplorer.enumerator.CardinalPoint;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com.br>
- * @since 07/12/2017
- * @version 1.0
+ * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com>
  */
 public class RotationRightTest {
+
+    @Test
+    public void testRotationNtoE() {
+        CardinalPoint cardinalPoint = CardinalPoint.N;
+        CardinalPoint expResult = CardinalPoint.E;
+        CardinalPoint result = RotationRight.rotation(cardinalPoint);
+        assertEquals(expResult, result);
+    }
     
     @Test
-    public void rotationNorthToEast() {
-        assertEquals(CardinalPoint.E, RotationRight.rotation(CardinalPoint.N));
+    public void testRotationEtoS() {
+        CardinalPoint cardinalPoint = CardinalPoint.E;
+        CardinalPoint expResult = CardinalPoint.S;
+        CardinalPoint result = RotationRight.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void rotationEastToSouth() {
-        assertEquals(CardinalPoint.S, RotationRight.rotation(CardinalPoint.E));
+    public void testRotationStoW() {
+        CardinalPoint cardinalPoint = CardinalPoint.S;
+        CardinalPoint expResult = CardinalPoint.W;
+        CardinalPoint result = RotationRight.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void rotationSouthToWest() {
-        assertEquals(CardinalPoint.W, RotationRight.rotation(CardinalPoint.S));
+    public void testRotationWtoN() {
+        CardinalPoint cardinalPoint = CardinalPoint.W;
+        CardinalPoint expResult = CardinalPoint.N;
+        CardinalPoint result = RotationRight.rotation(cardinalPoint);
+        assertEquals(expResult, result);
     }
-
-    @Test
-    public void rotationWestToNorth() {
-        assertEquals(CardinalPoint.N, RotationRight.rotation(CardinalPoint.W));
-    }
-
 }
