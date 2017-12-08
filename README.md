@@ -1,4 +1,5 @@
 # MarsExplorer
+Desafio de lógica e programação Java da empresa Conta Azul.
 
 # O Problema
 
@@ -22,8 +23,10 @@ Não deve guardar estado do robô para consulta posterior;
 # Rodando a app
 mvn clean install spring-boot:run
 
-# Teste Case Default
+# Exemplo de Teste
 
 - Movimento com rotações para direita
+
 curl -s --request POST http://localhost:8080/rest/mars/MMRMMRMM
+
 Saída esperada: (2, 0, S)
