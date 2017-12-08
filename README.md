@@ -27,7 +27,18 @@ mvn clean install spring-boot:run
 
 ## Exemplo de Teste
 ```
-Movimento com rotações para direita
-curl -s --request POST http://localhost:8080/rest/mars/MMRMMRMM
+Entrada: curl -s --request POST http://localhost:8080/rest/mars/MMRMMRMM
 Saída esperada: (2, 0, S)
+```
+```
+Entrada: curl -s --request POST http://localhost:8080/rest/mars/MML
+Saída esperada: (0, 2, W)
+```
+```
+Entrada: curl -s --request POST http://localhost:8080/rest/mars/AAA
+Saída esperada: 400 Bad Request
+```
+```
+Entrada: curl -s --request POST http://localhost:8080/rest/mars/MMMMMMMMMMMMMMMMMMMMMMMM
+Saída esperada: 400 Bad Request
 ```
