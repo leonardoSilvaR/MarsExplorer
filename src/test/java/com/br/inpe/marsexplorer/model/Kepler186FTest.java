@@ -44,21 +44,6 @@ public class Kepler186FTest {
     }
 
     /**
-     * Test of changeCardinal method, of class Kepler186F.
-     */
-    @Test
-    @Ignore
-    public void testChangeCardinal() {
-        System.out.println("changeCardinal");
-        CardinalPoint cardinalPoint = null;
-        Kepler186F instance = new Kepler186F();
-        Kepler186F expResult = null;
-        Kepler186F result = instance.changeCardinal(cardinalPoint);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of getCoordinates method, of class Kepler186F.
      */    
     @Test

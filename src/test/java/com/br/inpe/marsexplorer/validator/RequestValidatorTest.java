@@ -14,7 +14,7 @@ public class RequestValidatorTest {
     }
 
     /**
-     * Test of validator method, of class RequestValidator.
+     * Test of validator method, of class Validator.
      */
     @Test
     @Ignore
@@ -22,7 +22,7 @@ public class RequestValidatorTest {
         System.out.println("validator");
         String req = "";
         Boolean expResult = null;
-        Boolean result = RequestValidator.validator(req);
+        Boolean result = Validator.validator(req);
         assertEquals(expResult, result);
         fail("The test case is a prototype.");
     }

@@ -3,6 +3,7 @@ package com.br.inpe.marsexplorer.control;
 import com.br.inpe.marsexplorer.enumerator.CardinalPoint;
 
 /**
+ * Defines rotation based at its own axis
  *
  * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com>
  * @since 07/12/2017
@@ -10,6 +11,12 @@ import com.br.inpe.marsexplorer.enumerator.CardinalPoint;
  */
 public class RotationRight {
 
+    /**
+     * Rotates to right on it owns axis
+     *
+     * @param cardinalPoint the current cardinal point
+     * @return new cardinal point
+     */
     public static CardinalPoint rotation(CardinalPoint cardinalPoint) {
         switch (cardinalPoint) {
             case N:

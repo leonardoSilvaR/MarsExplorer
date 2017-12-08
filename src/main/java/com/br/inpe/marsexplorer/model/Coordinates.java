@@ -1,6 +1,7 @@
 package com.br.inpe.marsexplorer.model;
 
 /**
+ * This class defines Cartesian coordinates
  *
  * @author Leonardo S. Rodrigues <leonardo.silva.rodrigues2@gmail.com>
  * @since 06/12/2017
