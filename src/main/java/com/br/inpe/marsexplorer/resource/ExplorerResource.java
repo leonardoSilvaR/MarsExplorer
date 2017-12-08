@@ -2,6 +2,7 @@ package com.br.inpe.marsexplorer.resource;
 
 import com.br.inpe.marsexplorer.model.Kepler186F;
 import com.br.inpe.marsexplorer.service.impl.Kepler186FServiceImpl;
+import com.br.inpe.marsexplorer.validator.Validator;
 import javax.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 07/12/2017
  * @version 1.0
  */
-@Validated
 @RestController
 @RequestMapping("/api")
 public class ExplorerResource {
@@ -35,10 +35,11 @@ public class ExplorerResource {
      * @return coordinates and cardinal point
      */
     @RequestMapping(value = "/explore/{command}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Kepler186F> finalDestiny(@Pattern(regexp = "[MRL]+")
-            @PathVariable("command") String command) {
-        return new ResponseEntity<>(service.getExploration(command), HttpStatus.OK);
-
+    public ResponseEntity finalDestiny(@PathVariable("command") String command) {
+        if (service.getExploration(command) != null) {
+            return new ResponseEntity(service.getExploration(command), HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.BAD_REQUEST.getReasonPhrase(), HttpStatus.BAD_REQUEST);
     }
 
 }
